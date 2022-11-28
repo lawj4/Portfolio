@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const reactIcon = (
   <img
@@ -45,7 +46,7 @@ const cIcon = (
 
 export default function About() {
   return (
-    <div className="About">
+    <div className="About arrow">
       <accent>001. About</accent>
       <br />
       <div className="detail w500">
@@ -59,23 +60,24 @@ export default function About() {
           development.
           <br />
           <br />
-          Today, I am making projects whenever I have free time. Don't mind the
-          green div border this website is a work in progress.
+          Today, I am making projects whenever I have free time.
           <br />
           <br />
           Here are a few technologies I’ve been working with recently:
           <br />
         </detail>
       </div>
-      <div className="skills">
-        <Logo logo={reactIcon} description="React" />
-        <Logo logo={JSIcon} description="JavaScript" />
-        <Logo logo={CSSIcon} description="CSS" />
-        <Logo logo={HTMLIcon} description="HTML5" />
-        <Logo logo={SQLIcon} description="MySQL" />
-        <Logo logo={pythonIcon} description="Python" />
-        <Logo logo={cIcon} description="C/C++" />
-      </div>
+      <AnimationOnScroll animateIn="animate__bounceIn" animateOut="animate__bounceOut">
+        <div className="skills">
+          <Logo logo={reactIcon} description="React" />
+          <Logo logo={JSIcon} description="JavaScript" />
+          <Logo logo={CSSIcon} description="CSS" />
+          <Logo logo={HTMLIcon} description="HTML5" />
+          <Logo logo={SQLIcon} description="MySQL" />
+          <Logo logo={pythonIcon} description="Python" />
+          <Logo logo={cIcon} description="C/C++" />
+        </div>
+      </AnimationOnScroll>
     </div>
   );
 }
