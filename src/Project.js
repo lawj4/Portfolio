@@ -51,7 +51,7 @@ const reactIcon = (
 export default function Project() {
     return (
       <div className="Experience">
-        <accent>011. Projects</accent>
+        <accent>011. <span className="title">Projects</span></accent>
         <br/>
         <Board
             image=<img src={require('./images/clock.png')} alt="project"/>

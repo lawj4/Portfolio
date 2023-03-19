@@ -1,5 +1,4 @@
 import Logo from "./Logo";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const reactIcon = (
   <img
@@ -46,38 +45,35 @@ const cIcon = (
 
 export default function About() {
   return (
-    <div className="About arrow">
-      <accent>001. About</accent>
-      <br />
-      <div className="detail w500">
-        <detail>
-          <br />
-          Hello! My name is Jeff, and I enjoy all things programming. I knew I
-          enjoyed it ever since I took a LEGO® MINDSTORMS® class in middle
-          school. The robot was lame, but I was intrigued by the logic that went
-          into making it function. However, it was not until recently that I
-          found that I could use my art and cs background together in web
-          development.
-          <br />
-          <br />
-          Today, I am making projects whenever I have free time.
-          <br />
-          <br />
-          Here are a few technologies I’ve been working with recently:
-          <br />
-        </detail>
-      </div>
-      <AnimationOnScroll animateIn="animate__bounceIn" animateOut="animate__bounceOut">
-        <div className="skills">
-          <Logo logo={reactIcon} description="React" />
-          <Logo logo={JSIcon} description="JavaScript" />
-          <Logo logo={CSSIcon} description="CSS" />
-          <Logo logo={HTMLIcon} description="HTML5" />
-          <Logo logo={SQLIcon} description="MySQL" />
-          <Logo logo={pythonIcon} description="Python" />
-          <Logo logo={cIcon} description="C/C++" />
+    <div className="About">
+        <accent>001. <span className="title">About</span></accent>
+        <br />
+        <div className="detail w500">
+          <detail>
+            <br />
+            Hello! My name is Jeff, and I enjoy all things programming. I knew I
+            enjoyed it ever since I took a LEGO® MINDSTORMS® class in middle
+            school. The robot was lame, but I was intrigued by the logic that
+            went into making it work.
+            <br />
+            <br />
+            Today, I am making projects whenever I have free time.
+            <br />
+            <br />
+            Here are a few technologies I’ve been working with recently:
+            <br />
+          </detail>
         </div>
-      </AnimationOnScroll>
+
+          <div className="skills">
+            <Logo logo={reactIcon} description="React" />
+            <Logo logo={JSIcon} description="JavaScript" />
+            <Logo logo={CSSIcon} description="CSS" />
+            <Logo logo={HTMLIcon} description="HTML5" />
+            <Logo logo={SQLIcon} description="MySQL" />
+            <Logo logo={pythonIcon} description="Python" />
+            <Logo logo={cIcon} description="C/C++" />
+          </div>
     </div>
   );
 }

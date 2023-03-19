@@ -1,27 +1,35 @@
-import { FaRegEnvelope, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import {
+  FaRegEnvelope,
+  FaLinkedinIn,
+  FaInstagram,
+  FaGithub,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
     <div className="Contact">
-      <accent>100. Contact</accent>
+      <accent>100. <span className="title">Contact</span></accent>
       <br />
-      <AnimationOnScroll
-        animateIn="animate__zoomIn"
-        animateOut="animate__zoomOut"
-      >
+
         <div className="contactBar">
+          <a href="https://github.com/lawj4" target="_blank"
+            rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/law-jefferson/" target="_blank"
+            rel="noopener noreferrer">
+            <FaLinkedinIn />
+          </a>
           <a href="mailto:jlaw0430@gmail.com?subject = Feedback&body = Message">
             <FaRegEnvelope />
           </a>
-          <a href="https://www.linkedin.com/in/law-jefferson/">
-            <FaLinkedinIn />
-          </a>
-          <a href="https://www.instagram.com/lawjefferson/">
+
+          <a href="https://www.instagram.com/lawjefferson/" target="_blank"
+            rel="noopener noreferrer">
             <FaInstagram />
           </a>
         </div>
-      </AnimationOnScroll>
+
     </div>
   );
 }

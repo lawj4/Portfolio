@@ -1,0 +1,320 @@
+/* GENERAL */
+
+$black: rgb(1, 4, 9);
+$brown: #785f37;
+$khaki: #838b96;
+$tan: #c9d1d9;
+$offwhite: #e9dbbd;
+$white: #eaeaea;
+$red: #9f0000;
+$yellow: #fdf800;
+$holocolor: #F3E600;
+$chamfer: 50px;
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+html,
+body {
+  background-color: $black;
+  color: $khaki;
+  margin: 0;
+}
+/* COLOR */
+.white {
+  color: $tan;
+}
+
+/* SIZE SPACE*/
+.x120 {
+  font-size: 120%;
+  size: 120%;
+}
+.x200 {
+  font-size: 200%;
+  size: 200%;
+}
+
+/* animation */
+
+.title {
+  padding-left: 5px;
+  font-size: 200%;
+  color: $tan;
+}
+
+accent {
+  font-family: "SF Mono", sans-serif;
+  font-size: 16px;
+  color: $red;
+}
+emphasis {
+  font-family: "Open Sans", sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  color: $tan;
+}
+.w500 {
+  max-width: 500px;
+}
+
+.App {
+  padding: 20vh 15vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 300px;
+}
+
+detail {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: $khaki;
+}
+
+.Logo {
+  width: fit-content;
+}
+.Logo img {
+  object-fit: scale-down; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 75px;
+  width: 75px;
+}
+
+.logotxt {
+  text-align: center;
+  padding: 5px;
+}
+.tan {
+  color: $khaki;
+}
+
+.skills {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+.Logo {
+  transition: all 0.2s ease-in-out;
+}
+.skills .Logo:hover {
+  transform: scale(1.25) translate(0, -10px);
+}
+
+.column {
+  float: left;
+  width: fit-content;
+}
+
+/* Project */
+
+.Board {
+  padding-top: 25px;
+}
+.Board img {
+  width: 500px;
+}
+.cropped {
+  min-width: 500px;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid $khaki;
+}
+.cropped img {
+  object-fit: cover;
+  left: 50%;
+  height: 100%;
+}
+.tech img {
+  width: 25px;
+  padding: 10px;
+  vertical-align: center;
+}
+.row {
+  display: flex;
+}
+.vcenter {
+  align-items: center;
+}
+.gap {
+  column-gap: 25px;
+}
+
+/* contact */
+.Contact {
+}
+.contactBar {
+  display: flex;
+  font-size: 25px;
+  padding: 25px;
+  column-gap: 25px;
+}
+.contactBar a {
+  transition: all 0.2s ease-in-out;
+  color: $khaki;
+  font-size: 50px;
+}
+.contactBar a:hover {
+  color: $red;
+  transform: translate(0, -5px);
+}
+
+*:hover {
+  outline: 1px green solid;
+}
+
+/* HOLO */
+// .holo:before {
+//   width: 800px;
+//   background-color: white;
+//   position: relative;
+//   z-index: 1;
+//   clip-path: 
+//     polygon(
+//       0% $chamfer,                 /* top left */
+//       $chamfer 0%,                 /* top left */
+//       calc(100%) 0%,    /* top right */
+//       100% $chamfer,               /* top right */
+//       100% calc(100% - $chamfer),  /* bottom right */
+//       calc(100% - $chamfer) 100%,  /* bottom right */
+//       $chamfer 100%,               /* bottom left */
+//       0 calc(100%)      /* bottom left */
+//     );
+// }
+
+.holo {
+  width: 700px;
+  display: flex;
+  // border: 3px solid rgba($holocolor, 0.8);
+  aspect-ratio: 16/9;
+  margin: 0;
+  padding: 0;
+  background-color: rgba($holocolor, 0.1);
+  position: relative;
+  z-index: 10;
+  clip-path: 
+    polygon(
+      0% $chamfer,                 /* top left */
+      $chamfer 0%,                 /* top left */
+      calc(100%) 0%,    /* top right */
+      100% $chamfer,               /* top right */
+      100% calc(100% - $chamfer),  /* bottom right */
+      calc(100% - $chamfer) 100%,  /* bottom right */
+      $chamfer 100%,               /* bottom left */
+      0 calc(100%)      /* bottom left */
+    );
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: $holocolor;
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+    }
+
+}
+.holo-overlay {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    rgba($holocolor, 0.25),
+    rgba($holocolor, .15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+
+}
+
+.holo > .holo-image img {
+  z-index: 1;
+  width: 100%;
+  height: 98%;
+  top: 4.5px;
+  // position: relative;
+  // top: 50%;
+  // transform: translateY(-50%);
+  position: absolute;
+  margin: auto;
+  // filter: sepia(100%) hue-rotate(160deg);
+  clip-path: 
+    polygon(
+      0% $chamfer + 2px,                 /* top left */
+      $chamfer+2px 0%,                 /* top left */
+      calc(100%) 0%,    /* top right */
+      100% $chamfer,               /* top right */
+      100% calc(100% - $chamfer - 2px),  /* bottom right */
+      calc(100% - $chamfer - 2px) 100%,  /* bottom right */
+      $chamfer 100%,               /* bottom left */
+      0 calc(100%)      /* bottom left */
+    );
+}
+
+.holo > .holo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid rgb(var(--primary-rgb) / 50%);
+  border-radius: 0.6rem;
+}
+// .holo > .holo-border {
+//   width: 1000px;
+//   height: 500px;
+//   background-color: white;
+//   position: absolute;
+// }
+
+.holo > .holo-content > .holo-icon {
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0px 0px 0.5rem white;
+}
+
+.holo > .holo-content > .holo-user{
+  font-size: 2rem;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.holo > .holo-content > .holo-user > :is(.name, .link) {
+  font-family: 'Roboto Mono', monospace;
+  color: white; 
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 0% -100%;
+  }
+}

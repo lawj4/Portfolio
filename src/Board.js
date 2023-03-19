@@ -1,10 +1,5 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 export default function Board(prop) {
   return (
-    <AnimationOnScroll
-      animateIn="animate__slideInLeft"
-      animateOut="animate__slideOutRight"
-    >
       <div className="Board row gap">
         <div className="cropped">{prop.image}</div>
         <div>
@@ -25,6 +20,6 @@ export default function Board(prop) {
           </a>
         </div>
       </div>
-    </AnimationOnScroll>
+
   );
 }
