@@ -331,6 +331,7 @@ detail {
 }
 video {
   height: 100%;
+  width: 110%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -353,8 +354,11 @@ right: 50%;
 //   }
 // }
 
-.front {
+.all-front {
   transition: 1s;
+}
+.front {
+  // transition: 1s;
 }
 
 .header {
@@ -366,7 +370,7 @@ right: 50%;
   color: $holocolor;
   z-index: 20;
 }
-.subheader {
+.bottomheader {
   text-align: center;
   font-size: calc(12px);
   color: $holocolor;
@@ -409,17 +413,44 @@ right: 50%;
 .leftvideo {
   position: absolute;
   top: 0px;
-  left: 0px;
-  width: 33vw;
+  left: -5%;
+  width: 40vw;
   height: 100%;
   z-index: 100;
+  // background-color: rgba(white,0.3);
 }
 .rightvideo {
   position: absolute;
   top: 0px;
-  right: 0;
-  width: 33vw;
+  right: -5%;
+  width: 40vw;
   height: 100%;
   z-index: 100;
+}
 
+.leftHeader {
+  position: absolute;
+  left: 10px;
+  z-index: 101;
+  top: 50%;
+  transform: rotate(-90deg);
+  font-size: calc(12px);
+}
+.rightHeader {
+  position: absolute;
+  right: 10px;
+  z-index: 15;
+  top: 50%;
+  transform: rotate(90deg);
+  font-size: calc(12px);
+}
+.aboutpage {
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  left: -5%;
+  top: 0;
+  background-color: rgba(black,0.8);
+  z-index: 21;
+  visibility: hidden;
 }

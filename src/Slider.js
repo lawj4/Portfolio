@@ -10,14 +10,16 @@ import { HiArrowLongDown, HiArrowLongUp } from "react-icons/hi2";
 import React, { useState, useEffect } from "react";
 
 function nextSlide(val, setVal) {
-    if (val+100 !== 0) {
-        document.querySelector(".header").style.visibility = "hidden";
-        document.querySelector(".subheader").style.visibility = "hidden";
-      } else {
-        document.querySelector(".header").style.visibility = "visible";
-        document.querySelector(".subheader").style.visibility = "visible";
-      }
-  document.querySelector(".front").style.transform = `translate(0, -${
+  if (val + 100 !== 0) {
+    document.querySelector(".header").style.visibility = "hidden";
+    document.querySelector(".leftHeader").style.visibility = "hidden";
+    document.querySelector(".rightHeader").style.visibility = "hidden";
+  } else {
+    document.querySelector(".header").style.visibility = "visible";
+    document.querySelector(".leftHeader").style.visibility = "visible";
+    document.querySelector(".rightHeader").style.visibility = "visible";
+  }
+  document.querySelector(".all-front").style.transform = `translate(0, -${
     val + 100
   }%)`;
   document.querySelector(".proj").style.transform = `translate(0, -${
@@ -28,14 +30,16 @@ function nextSlide(val, setVal) {
   console.log(val);
 }
 function prevSlide(val, setVal) {
-    if (val-100 !== 0) {
+    if (val - 100 !== 0) {
         document.querySelector(".header").style.visibility = "hidden";
-        document.querySelector(".subheader").style.visibility = "hidden";
+        document.querySelector(".leftHeader").style.visibility = "hidden";
+        document.querySelector(".rightHeader").style.visibility = "hidden";
       } else {
         document.querySelector(".header").style.visibility = "visible";
-        document.querySelector(".subheader").style.visibility = "visible";
+        document.querySelector(".leftHeader").style.visibility = "visible";
+        document.querySelector(".rightHeader").style.visibility = "visible";
       }
-  document.querySelector(".front").style.transform = `translate(0, -${
+  document.querySelector(".all-front").style.transform = `translate(0, -${
     val - 100
   }%)`;
   document.querySelector(".proj").style.transform = `translate(0, -${
@@ -49,7 +53,7 @@ function prevSlide(val, setVal) {
 export default function Slider() {
   // <Holo image=<img src={require("./images/clock.png")} alt="project" />/>
   const [offset, setOffset] = useState(0);
- 
+
   return (
     <div>
       <div className="slide">
